@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import blue from '@material-ui/core/colors/blue'
 
 import App from './App'
 
@@ -14,9 +15,12 @@ const store = configureStore()
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: Colors.primary,
+      main: blue[500],
     },
     secondary: {
+      main: Colors.secondary,
+    },
+    error: {
       main: Colors.secondary,
     },
   }

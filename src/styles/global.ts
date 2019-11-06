@@ -27,5 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     body,
     #root {
       margin: 0;
+      height: 100%;
+      overflow-x: hidden;
     }
 `
