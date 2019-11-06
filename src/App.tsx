@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+} from 'react-router-dom'
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { Auth } from 'components/Auth'
 
-export default App;
+import { GlobalStyles } from 'styles/global'
+
+const App: React.FC = () => (
+  <Router>
+    <GlobalStyles />
+    <Route path='/auth'>
+      <Auth />
+    </Route>
+    <Redirect from='/' to='/auth' />
+  </Router>
+)
+
+export default App
