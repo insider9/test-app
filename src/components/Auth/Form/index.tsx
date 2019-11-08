@@ -9,13 +9,19 @@ import { Button } from 'components/Auth/Form/Button'
 import { Input } from 'components/Auth/Form/Input'
 
 import { ERROR_MESSAGES } from 'constants/errors'
+import { AuthData } from 'interfaces'
 
 enum FormFields {
   email = 'email',
   password = 'password',
 }
 
-export const AuthForm = () => {
+interface AuthFormProps {
+  onSubmit: (data: AuthData) => void,
+  loading: boolean,
+}
+
+export const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, loading }) => {
   const [data, handleChange] = useState({ email: '', password: '' })
   const initialErrors = { email: '', password: '', checked: false }
   const [errors, setErrors] = useState(initialErrors)
@@ -34,8 +40,6 @@ export const AuthForm = () => {
     ERRORS.checked = true
     setErrors(ERRORS)
 
-    console.log(ERRORS)
-
     return !ERRORS.email && !ERRORS.password
   }
 
@@ -52,8 +56,10 @@ export const AuthForm = () => {
     }
   }
 
-  const onSubmit = () => {
-    validate()
+  const onSubmitClick = () => {
+    if (validate()) {
+      onSubmit(data)
+    }
   }
 
   return (
@@ -83,7 +89,7 @@ export const AuthForm = () => {
         control={<Checkbox color='primary' />}
         label='Запомнить меня'
       />
-      <SubmitButton onClick={onSubmit}>
+      <SubmitButton onClick={onSubmitClick} loading={loading}>
         Войти в аккаунт
       </SubmitButton>
     </Wrapper>

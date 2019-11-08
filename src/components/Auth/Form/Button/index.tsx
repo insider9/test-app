@@ -15,7 +15,7 @@ export const Button: React.FC<ButtonProps & CustomButtonProps> = ({ children, lo
     variant='contained'
     fullWidth
   >
-    {loading ? <CircularProgress /> : children}
+    {loading ? <CircularProgress size={24} /> : children}
   </StyledButton>
 )
 
