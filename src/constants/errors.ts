@@ -1,3 +1,4 @@
 export const ERROR_MESSAGES = {
-  emptyField: 'Обязательное поле!'
+  emptyField: 'Обязательное поле!',
+  incorrectEmail: 'Некорректный e-mail',
 }

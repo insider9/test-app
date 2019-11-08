@@ -17,6 +17,7 @@ export const Header: React.FC = () => {
   )
 }
 
+//#region Styled components
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -40,3 +41,4 @@ const LockIcon = styled(LockOutlinedIcon)`
     fill: ${Colors.white};
   }
 `
+//#endregion

@@ -1,0 +1,87 @@
+{
+  "auth": {
+    "jwt": "86fasfgfsogHGad"
+  },
+  "items": [
+    {
+      "id": 1,
+      "name": "SHINGLAS многослойная черепица, Ранчо, Коричневый, 2 м2",
+      "count": 78,
+      "productType": "packages",
+      "price": 589,
+      "img": "https://www.tstn.ru/upload/iblock/1f9/818083_1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Черепица конька/карниза  (уп. 12 п.м / 20 п.м)",
+      "count": 3,
+      "productType": "packages",
+      "price": 4988,
+      "img": "https://www.tophouse.ru/images/price/myagkaya-krovlya/-b-shinglas-shinglas-b----gibkaya-cherepitsa--tehnonikol-rossiya-/shinglas-konek-karniz.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Планка карниза, 2 м",
+      "count": 15,
+      "productType": "units",
+      "price": 595,
+      "img": "https://sowellbud.com.ua/image/cache/data/product/687b66ee3dd40185ec3eba08b37b76e8-800x600.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Планка ветровая, 2 м",
+      "count": 10,
+      "productType": "units",
+      "price": 780,
+      "img": "https://www.made.ru/image-preview/530/340/crop/offer_files%252F2016%252F01%252F15%252F07%252F19%252F398K3F%252Faa671c5c92aecbca36513d7b55c7a3b1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Ковер подкладочный, рулон 15 м2",
+      "count": 11,
+      "productType": "units",
+      "price": 3829,
+      "img": "https://masterkrovlya.ru/images/virtuemart/product/025035.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Лист OSB, 2500×1250×9 мм",
+      "count": 54,
+      "productType": "units",
+      "price": 715,
+      "img": "https://st32.stblizko.ru/images/product/267/448/371_original.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Аэратор коньковый AIRIDGE FELT",
+      "count": 26,
+      "productType": "units",
+      "price": 350,
+      "img": "https://www.grandline.ru/image/cache/data/shop1c/70/106870-754x398.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Вентилятор скатный Huopa KTV",
+      "count": 3,
+      "productType": "packages",
+      "price": 1050,
+      "img": "https://www.vilpe.com/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/1/7/17430.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Мастика битумная, 3 л",
+      "count": 4,
+      "productType": "units",
+      "price": 2380,
+      "img": "https://shop.tn.ru/media/catalog/product/cache/image/450x400/17f82f742ffe127f42dca9de82fb58b1/4/2/420915_1_1.png"
+    },
+    {
+      "id": 10,
+      "name": "Гвозди кровельные ершеные (упаковка 5 кг)",
+      "count": 4,
+      "productType": "packages",
+      "price": 750,
+      "img": "https://www.grandline.ru/image/cache/data/shop1c/72/35172-754x398.jpg"
+    }
+  ]
+}

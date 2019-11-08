@@ -20,12 +20,10 @@ const AppComponent: React.FC<AppProps> = ({ isAuthenticated }) => (
   <Router>
     <GlobalStyles />
     <Route path='/auth'>
-      {isAuthenticated && <Redirect to='/cart' />}
-      <Auth />
+      {isAuthenticated ? <Redirect to='/cart' /> : <Auth />}
     </Route>
     <Route path='/cart'>
-      {!isAuthenticated && <Redirect to='/auth' />}
-      <ShoppingCart />
+      {!isAuthenticated ? <Redirect to='/auth' /> : <ShoppingCart />}
     </Route>
     <Redirect from='/' to={isAuthenticated ? '/cart' : '/auth'} />
   </Router>

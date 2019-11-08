@@ -1,4 +1,4 @@
-import {Action, createAction, handleActions} from 'redux-actions'
+import { Action, createAction, handleActions } from 'redux-actions'
 import { takeEvery, put, delay } from 'redux-saga/effects'
 import { AuthData, AuthState } from 'interfaces'
 

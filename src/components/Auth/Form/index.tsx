@@ -10,6 +10,7 @@ import { Input } from 'components/Auth/Form/Input'
 
 import { ERROR_MESSAGES } from 'constants/errors'
 import { AuthData } from 'interfaces'
+import { EMAIL_REGEXP } from 'constants/regexp'
 
 enum FormFields {
   email = 'email',
@@ -26,14 +27,18 @@ export const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, loading }) => {
   const initialErrors = { email: '', password: '', checked: false }
   const [errors, setErrors] = useState(initialErrors)
 
-  const validate = () => {
+  const validate = (values: AuthData = data) => {
     let ERRORS = { ...initialErrors }
 
-    if (!data.email.trim()) {
+    if (!values.email.trim()) {
       ERRORS.email = ERROR_MESSAGES.emptyField
     }
 
-    if (!data.password) {
+    if (!EMAIL_REGEXP.test(values.email)) {
+      ERRORS.email = ERROR_MESSAGES.incorrectEmail
+    }
+
+    if (!values.password) {
       ERRORS.password = ERROR_MESSAGES.emptyField
     }
 
@@ -46,13 +51,15 @@ export const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, loading }) => {
   const onFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
     const field = e.target.getAttribute('name') as FormFields
 
-    handleChange({
+    const values = {
       ...data,
-      [field]: e.target.value
-    })
+      [field]: e.target.value,
+    }
+
+    handleChange(values)
 
     if (errors.checked) {
-      validate()
+      validate(values)
     }
   }
 
