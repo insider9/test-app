@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { Item } from 'interfaces'
 import { ShoppingCartMobileItem } from 'components/ShoppingCart/Mobile/Item'
+import { Breakpoints } from 'styles/breakpoints'
 
 interface ShoppingCartMobileProps {
   items: Item[],
@@ -25,9 +26,12 @@ export const ShoppingCartMobile: React.FC<ShoppingCartMobileProps> = ({ items })
 
 //#region Styled components
 const Wrapper = styled.div`
-  padding: 30px 28px;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  
+  @media (min-width: ${Breakpoints.sm + 1}px) {
+    display: none;
+  }
 `
 //#endregion

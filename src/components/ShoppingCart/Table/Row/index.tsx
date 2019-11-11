@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { ToggleButton } from 'components/ShoppingCart/Table/ToggleButton'
+import { Image } from 'components/common/Image'
 
 import { ProductStorageTypes, STORAGE_TYPE_ALIASES } from 'constants/common'
 import { Colors } from 'styles/colors'
@@ -26,7 +27,7 @@ export const ShoppingCartTableRow: React.FC<TableRowProps> = ({
   return (
     <Wrapper deleted={deleted}>
       <ImageCell>
-        <ImageWrapper image={img} />
+        <ImageWrapper image={img} size={24} />
       </ImageCell>
       <NameCell>{name}</NameCell>
       <TableCell>{count} {STORAGE_TYPE_ALIASES[storageType]}</TableCell>
@@ -40,20 +41,8 @@ export const ShoppingCartTableRow: React.FC<TableRowProps> = ({
 }
 
 //#region Styled components
-interface ImageProps extends React.HTMLProps<HTMLDivElement> {
-  image: string,
-}
-
-const ImageWrapper = styled(({ image, ...rest }: ImageProps) => <div {...rest} />)`
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  background-image: url(${props => props.image});
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  margin: 0 2px 0 10px;
-  border: 1px solid ${Colors.gray5};
+const ImageWrapper = styled(Image)`
+  margin: 0 auto;
 `
 
 const TableCell = styled.td`
@@ -64,6 +53,7 @@ const TableCell = styled.td`
 
 const ImageCell = styled.td`
   border: 1px solid ${Colors.gray};
+  width: 40px;
 `
 
 const NameCell = styled(TableCell)`

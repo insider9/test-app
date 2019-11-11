@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Colors } from 'styles/colors'
 import { Item } from 'interfaces'
 import { ShoppingCartTableRow } from 'components/ShoppingCart/Table/Row'
+import { Breakpoints } from 'styles/breakpoints'
 
 interface TableProps {
   items: Item[],
@@ -43,6 +44,10 @@ const StyledTable = styled.table`
   border: 1px solid ${Colors.gray};
   border-collapse: collapse;
   text-align: center;
+  
+  @media (max-width: ${Breakpoints.sm}px) {
+    display: none;
+  }
 `
 
 const TableHeader = styled.th`

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
+import Link from '@material-ui/core/Link'
+import Typography from '@material-ui/core/Typography'
 
 import { Header } from 'components/Auth/Form/Header'
 import { Button } from 'components/Auth/Form/Button'
@@ -11,6 +13,7 @@ import { Input } from 'components/Auth/Form/Input'
 import { ERROR_MESSAGES } from 'constants/errors'
 import { AuthData } from 'interfaces'
 import { EMAIL_REGEXP } from 'constants/regexp'
+import { Colors } from 'styles/colors'
 
 enum FormFields {
   email = 'email',
@@ -99,6 +102,17 @@ export const AuthForm: React.FC<AuthFormProps> = ({ onSubmit, loading }) => {
       <SubmitButton onClick={onSubmitClick} loading={loading}>
         Войти в аккаунт
       </SubmitButton>
+      <LinksWrapper>
+        <Link href='#' component='a'>
+          <Typography variant='body2'>Забыли пароль?</Typography>
+        </Link>
+        <Link href='#' component='a'>
+          <Typography variant='body2'>Регистрация</Typography>
+        </Link>
+      </LinksWrapper>
+      <Copyright>
+        <Typography variant='body2'>Copyright© Ваш сайт 2019.</Typography>
+      </Copyright>
     </Wrapper>
   )
 }
@@ -113,8 +127,8 @@ const Wrapper = styled.div`
   position: relative;
   
   // Disable transform on screen height lower than AuthForm height
-  @media screen and (max-height: 480px) {
-    position: static;
+  @media screen and (max-height: 540px) {
+    top: 0;
     transform: none;
     margin-bottom: 28px;
   }
@@ -124,5 +138,23 @@ const SubmitButton = styled(Button)`
   && {
     margin-top: 32px;
   }
+`
+
+const LinksWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 15px;
+  font-size: 14px;
+`
+
+const Copyright = styled.div`
+  color: ${Colors.black};
+  opacity: .54;
+  text-align: center;
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+  margin-bottom: 30px;
 `
 //#endregion

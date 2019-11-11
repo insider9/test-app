@@ -11,6 +11,7 @@ export interface AuthState {
 
 export interface LoadingState {
   auth: boolean,
+  items: boolean,
 }
 
 export interface Item {
